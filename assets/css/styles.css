@@ -87,13 +87,42 @@ main {
   background-color: var(--grey-six);
 }
 
-.section-one {
+.section-two {
   width: 80%;
-  height: 505px;
+  height: 605px;
   background-color: var(--grey-seven);
   border: 1px solid var(--grey-three);
   margin: 20px auto;
   padding: 20px;
+  display: flex;
+}
+.section-two .formulario-ingreso {
+  display: grid;
+  width: 80%;
+}
+.section-two .formulario-ingreso form {
+  background-color: var(--grey-six);
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.section-two .formulario-ingreso form .form-group {
+  margin-top: 15px;
+  text-decoration: none;
+  list-style: none;
+}
+.section-two .formulario-ingreso form .form-group input {
+  align-self: flex-end;
+  outline: none;
+  width: 240px;
+  padding: 5px;
+}
+.section-two .formulario-ingreso button {
+  width: 90px;
+  color: white;
+  background-color: var(--azul-dos);
+  padding: 15px;
+  border-radius: 10px;
 }
 
 /* footer-contact */
