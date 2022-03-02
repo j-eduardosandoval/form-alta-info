@@ -4,17 +4,18 @@ main {
 
 .section-two {
   width: 80%;
-  height: 605px;
+  height: 1905px;
   background-color: var(--grey-seven);
   border: 1px solid var(--grey-three);
   margin: 20px auto;
   padding: 20px;
-  display: flex;
+  
   .formulario-ingreso {
     display: grid;
-    width: 80%;
+    width: 80%;    
     form {
-      background-color: var(--grey-six);
+        background-color: var(--grey-six);
+        border: 1px solid rgb(201, 201, 201);
       padding: 20px;
       margin: 0 auto;
       border-radius: 10px;
@@ -32,11 +33,14 @@ main {
     }
 
     button {
+        
       width: 90px;
       color: white;
       background-color: var(--azul-dos);
-      padding: 15px;
+      padding: 10px;
+      margin-top: 20px;
       border-radius: 10px;
+      
       
     }
   }
