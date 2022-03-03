@@ -1,9 +1,42 @@
 .login-main {
-    width: 100%;
-    height: 100%;
-    border: 1px solid red;
-    .-content {
-        width: 80%;
-        height: 400px;
+  max-width: 100%;
+  height: 100%;  
+  .login-content {
+    display: grid;    
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-form {        
+    height: 200px;
+    border-radius: 10px;
+    background-color: var(--grey-five);
+    .section-one {
+        width: 100%;
+        height: 40px;
+        color: white;
+        background-color: var(--azul-tres);
+        text-align: center;
+        border-radius:10px 10px 0 0;        
     }
+    .section-two-form {
+        padding: 10px 30px;
+        .group-form {
+            margin: 15px;
+            input {
+                padding: 5px;
+                outline: none;
+            }
+        }
+        .login-footer-button {                        
+            .button-login {
+                padding: 7px;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                background-color: var(--rojo-tres);
+            }        
+        }
+    }
+  }
 }
