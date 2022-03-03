@@ -1,14 +1,13 @@
 main {
-  background-color: var(--grey-six);
+  display: grid;
+  background-color: var(--grey-six);  
 }
 .section-two {
-  width: 80%;
-  height: 605px;
+  width: 80%;  
   background-color: var(--grey-seven);
   border: 1px solid var(--grey-three);
   margin: 20px auto;
   padding: 20px;
-
   .formulario-ingreso {
     display: grid;
     width: 80%;    
