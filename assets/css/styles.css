@@ -54,9 +54,15 @@
   margin: 0;
 }
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 body {
   font-family: var(--body-font);
-  height: 100%;
+  margin: 0;
+  margin-bottom: 40px;
 }
 
 header {
@@ -84,12 +90,12 @@ header {
 }
 
 main {
+  display: grid;
   background-color: var(--grey-six);
 }
 
 .section-two {
   width: 80%;
-  height: 605px;
   background-color: var(--grey-seven);
   border: 1px solid var(--grey-three);
   margin: 20px auto;
@@ -133,7 +139,6 @@ main {
 }
 .login-main .login-content {
   display: grid;
-  height: 400px;
   align-items: center;
   justify-content: center;
 }
@@ -166,6 +171,12 @@ main {
   border-radius: 5px;
   color: white;
   background-color: var(--rojo-tres);
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
 }
 
 /* footer-contact */
