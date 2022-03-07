@@ -66,7 +66,7 @@ body {
 }
 
 header {
-  height: 70px;
+  height: 60px;
 }
 
 .nav-barr {
@@ -90,7 +90,6 @@ header {
 }
 
 main {
-  display: grid;
   background-color: var(--grey-six);
 }
 
@@ -99,10 +98,14 @@ main {
   background-color: var(--grey-seven);
   border: 1px solid var(--grey-three);
   margin: 0px auto;
+  height: 1200px;
 }
 .section-two .formulario-ingreso {
   display: grid;
   width: 80%;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
 }
 .section-two .formulario-ingreso form {
   background-color: var(--grey-six);
