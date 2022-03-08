@@ -20,57 +20,89 @@
     </header>
     <main>
       <section class="section-two">
-        <div class="formulario-ingreso">
-          <form action="" method="get" name="form1">
-            <div class="form-group">
-              <label for="">No. Informe:</label>
-              <input type="text" name="noinforme" />
-            </div>
-            <div class="form-group">
-              <label for="">Clave:</label>
-              <input type="text" name="clave" />
-            </div>
-            <div class="form-group">
-              <label for=""> Nombre Item: </label>
-              <input type="text" name="item" />
-            </div>
-            <div class="form-group">
-              <label for="">Marca:</label>
-              <input type="text" name="marca" />
-            </div>
-            <div class="form-group">
-              <label for="">Modelo:</label>
-              <input type="text" name="modelo" />
-            </div>
-            <div class="form-group">
-              <label for="">Fecha de Emisión:</label>
-              <input type="date" name="fechemi" />
-            </div>
-            <div class="form-group">
-              <label for="">Fecha de vigencia:</label>
-              <input type="date" name="fechvi" />
-            </div>
-            <div class="form-group">
-              <label for="">Norma:</label>
-              <input type="text" name="nom" />
-            </div>
-            <div class="form-group">
-              <label for="">Ing. Laboratorista:</label>
-              <input type="text" name="inglab" />
-            </div>
-            <div class="form-group">
-              <label for=""> Supervisor:</label>
-              <input type="text" name="suplab" />
-            </div>
-            <div class="form-group">
-              <label for=""> Estatus:</label>
-              <input type="text" name="estatus" />
-            </div>
-            <div class="box-footer">                           
-                <button type="submit" class="" title="Gruardar registro">GUARDAR</button>
-                <input type="hidden" name="MM_insert" value="form1">
-            </div>
-          </form>
+        <div class="formulario-container">
+          <div class="formulario-container-tittle">
+            <h2>Ingreso de Items</h2>
+            <p>
+              Llene el siguiente formulario con los datos del informe a
+              publicar.
+            </p>
+          </div>
+          <div class="formulario-ingreso">
+            <form
+              action="php/registro-qr-items.php"
+              method="post"
+              id="form1"
+              name="form1"
+            >
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="numinforme"
+                  placeholder="No. Informe"
+                />
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="clave" placeholder="Clave" />
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="nombre" placeholder="Nombre Item" />
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="marca" placeholder="Marca" />
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="modelo" placeholder="Modelo" />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="date"
+                  name="fecha_emision"
+                  placeholder="Fecha de emision"
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="date"
+                  name="fecha_vigencia"
+                  placeholder="Fecha de Vigencia"
+                />
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="idnom" placeholder="Norma" />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="iding"
+                  placeholder="Ing. Laboratorista"
+                />
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="idsup" placeholder="Supervisor" />
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="estado" placeholder="Estado" />
+              </div>
+
+              <div class="box-footer">
+                <button type="submit" class="" title="Gruardar registro">
+                  GUARDAR
+                </button>
+                <input type="hidden" name="MM_insert" value="form1" />
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </main>
@@ -90,7 +122,7 @@
                   <br />
                   (55) 4426-1034 Y (55) 4426-3060 <br />
                   <strong>Email: </strong> atencionaclientes@labteso.com
-                </p>                
+                </p>
               </div>
             </div>
           </div>
