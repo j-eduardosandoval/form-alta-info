@@ -55,7 +55,7 @@
 }
 
 html {
-  min-height: 100%;
+  height: 100%;
   position: relative;
 }
 
@@ -63,6 +63,7 @@ body {
   font-family: var(--body-font);
   margin: 0;
   margin-bottom: 40px;
+  height: 100%;
 }
 
 header {
@@ -173,43 +174,62 @@ main {
   }
 }
 .login-main {
-  max-width: 100%;
-  height: 780px;
-}
-.login-main .login-content {
-  display: grid;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 100%;
+  bottom: 0;
 }
-.login-main .login-form {
-  height: 200px;
-  border-radius: 10px;
-  background-color: var(--grey-five);
+.login-main .login_content {
+  border: 1px solid #dadce0;
+  width: 450px;
+  height: 500px;
+  border-radius: 8px;
 }
-.login-main .login-form .section-one {
-  width: 100%;
-  height: 40px;
-  color: white;
-  background-color: var(--azul-tres);
+.login-main .login_form {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  border: 1px solid blue;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.login-main .login_form .section-tittle {
+  border: 1px solid #33ff00;
   text-align: center;
-  border-radius: 10px 10px 0 0;
+  grid-row: 1;
 }
-.login-main .login-form .section-two-form {
-  padding: 10px 30px;
+.login-main .login_form .section-two-form {
+  grid-row: 2;
+  border: 1px solid #ff00aa;
 }
-.login-main .login-form .section-two-form .group-form {
+.login-main .login_form .section-two-form .group-form {
+  border: 1px solid red;
   margin: 15px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-items: end;
 }
-.login-main .login-form .section-two-form .group-form input {
+.login-main .login_form .section-two-form .group-form label {
+  columns: 1;
+}
+.login-main .login_form .section-two-form .group-form input {
+  columns: 2;
+  width: 100%;
   padding: 5px;
   outline: none;
 }
-.login-main .login-form .section-two-form .login-footer-button .button-login {
+.login-main .login_form .login-footer-button {
+  border: 1px solid #00e1ff;
+  grid-row: 3;
+}
+.login-main .login_form .login-footer-button .button-login {
   padding: 7px;
   border: none;
   border-radius: 5px;
   color: white;
-  background-color: var(--rojo-tres);
+  background-color: #1a73e8;
 }
 
 .footer {
