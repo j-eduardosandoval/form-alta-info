@@ -76,7 +76,10 @@ $totalRows_lista = mysqli_num_rows($lista);
                         </tr>
                         <tr>
                             <td>Fecha vigencia:</td>
-                            <td><?php echo $roowfila['fecha_vigencia']; ?></td>
+                            <td><?php 
+                            $fechamasdias = $roowfila['fecha_emision'];
+                            $fechavigencia= date("Y-m-d" ,strtotime($fechamasdias."+ 90 days"));
+                            echo $fechavigencia ?></td>
                         </tr>
                         <tr>
                             <td>Norma:</td>
@@ -91,8 +94,27 @@ $totalRows_lista = mysqli_num_rows($lista);
                             <td><?php echo $roowfila['idsup']; ?></td>
                         </tr>
                         <tr>
+                            <td>Vigencia:</td>
+                            <td>90 Dias</td>
+                        </tr>
+                        <tr>
                             <td>Estatus:</td>
-                            <td class="estatus">Vigente</td>
+                            <td>
+                                <?php 
+                                    $fechaemision= new DateTime($fechamasdias);                                    
+                                    $fechaactual= new DateTime(date("Y-m-d"));
+                                    $fechaestatus= $fechaemision->diff($fechaactual);
+                                    echo $fechaestatus->days . ' dias';
+                                    $fechaa = $fechaestatus->days;
+                                    if($fechaa > 90){
+                                        echo '<span class="estatus-vencido" style="font-size:14px">VENCIDO</span>';
+                                    } else {
+                                        echo '<span class="estatus-vigente" style="font-size:14px">VIGENTE</span>';
+                                    };
+                           
+                                ?>
+                            </td>
+                            
                         </tr>
                     </table>
                 </form>
