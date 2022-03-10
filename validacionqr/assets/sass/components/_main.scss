@@ -27,10 +27,19 @@ main {
   td {
     width: 50%;
   }
-  .estatus {
-    width: 20%;
-    border-radius: 5px;
-    background-color: rgb(238, 0, 0);
+  .estatus-vigente {
+    width: 15%;
+    padding: 6px;
+    border-radius: 8px;    
+    background-color: rgb(19, 170, 19);
+    color: white;
+    text-align: center;
+  }
+  .estatus-vencido {
+    width: 30%;
+    padding: 6px;
+    border-radius: 8px;    
+    background-color: rgb(158, 0, 0);
     color: white;
     text-align: center;
   }
@@ -59,10 +68,14 @@ main {
     td {
         width: 100%;
       }
-      .estatus {
+      .estatus-vigente {
         width: 50%;
         background-color: green;
       }
+      .estatus-vencido {
+        width: 80%;
+        background-color: rgb(128, 0, 0);    
+  }
     
   }
 
