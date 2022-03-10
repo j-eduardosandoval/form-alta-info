@@ -64,23 +64,23 @@ if (!isset($_SESSION['U_spidusu']) and $_SESSION['U_spidusu'] == '') {
         <div class="formulario-ingreso">
           <form action="registro-qr-items.php" method="post" id="form1" name="form1">
             <div class="form-group">
-              <input type="text" name="numinforme" placeholder="No. Informe" />
+              <input type="text" name="numinforme" value="" placeholder="No. Informe" />
             </div>
 
             <div class="form-group">
-              <input type="text" name="clave" placeholder="Clave" />
+              <input type="text" name="clave" value="" placeholder="Clave" />
             </div>
 
             <div class="form-group">
-              <input type="text" name="nombre" placeholder="Nombre Item" />
+              <input type="text" name="nombre" value="" placeholder="Nombre Item" />
             </div>
 
             <div class="form-group">
-              <input type="text" name="marca" placeholder="Marca" />
+              <input type="text" name="marca" value="" placeholder="Marca" />
             </div>
 
             <div class="form-group">
-              <input type="text" name="modelo" placeholder="Modelo" />
+              <input type="text" name="modelo" value="" placeholder="Modelo" />
             </div>
 
             <div class="form-group">
@@ -89,25 +89,17 @@ if (!isset($_SESSION['U_spidusu']) and $_SESSION['U_spidusu'] == '') {
             </div>
 
             <div class="form-group">
-            <label for="">Fecha de Vigencia</label>
-              <input type="date" name="fecha_vigencia" placeholder="Fecha de Vigencia" />
+              <input type="text" name="idnom" value="" placeholder="Norma" />
             </div>
 
             <div class="form-group">
-              <input type="text" name="idnom" placeholder="Norma" />
+              <input type="text" name="iding" value="" placeholder="Ing. Laboratorista" />
             </div>
 
             <div class="form-group">
-              <input type="text" name="iding" placeholder="Ing. Laboratorista" />
+              <input type="text" name="idsup" value="" placeholder="Supervisor" />
             </div>
 
-            <div class="form-group">
-              <input type="text" name="idsup" placeholder="Supervisor" />
-            </div>
-
-            <div class="form-group">
-              <input type="text" name="estado" placeholder="Estado" />
-            </div>
 
             <div class="box-footer">
               <button type="submit" class="" title="Gruardar registro">
