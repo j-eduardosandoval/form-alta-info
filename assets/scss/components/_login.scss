@@ -5,61 +5,72 @@
   max-width: 100%;
   height: 100%;
   bottom: 0;
-  
+  font-size: 18px;
+
   .login_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid #dadce0;
     width: 450px;
     height: 500px;
     border-radius: 8px;
   }
-  
+
   .login_form {
     display: grid;
     grid-template-rows: 1fr 2fr 1fr;
-    border: 1px solid blue;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    
-    .section-tittle {
-      border: 1px solid rgb(51, 255, 0);
+    width: 80%;
+    height: 80%;
+    .login-tittle {
+      img {
+        width: 80px;
+      }
+      width: 100%;
       text-align: center;
       grid-row: 1;
+      margin: auto 0;
     }
     .section-two-form {
       grid-row: 2;
-      border: 1px solid rgb(255, 0, 170);
 
-      .group-form {
-        border: 1px solid rgb(255, 0, 0);
-
-        margin: 15px;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        justify-items: end;
-        label {
-          columns: 1;
+      .login-form-container {
+        width: 90%;
+        margin: 0 auto;
+        .group-form {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          margin: 15px 0;
+          input {
+            padding: 14px;
+            outline: none; 
+            border: 1px solid #dadce0;      
+            border-radius: 4px;    
+          }
         }
-        input {
-          columns: 2;
-          width: 100%;
-          padding: 5px;
-          outline: none;
+
+        .login-footer-button {
+          grid-row: 3;
+          .login-footer-button-container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: 50%;
+            .button-login {
+              padding: 8px;
+              border: none;
+              border-radius: 5px;
+              color: white;
+              background-color: #1a73e8;
+              
+              
+            }
+          }
         }
       }
+
     }
-      .login-footer-button {
-        border: 1px solid rgb(0, 225, 255);
-grid-row: 3;
-        
-        .button-login {
-          padding: 7px;
-          border: none;
-          border-radius: 5px;
-          color: white;
-          background-color: #1a73e8;
-        }
-      }
-    
   }
 }
