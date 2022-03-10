@@ -67,7 +67,7 @@ body {
 }
 
 header {
-  height: 40px;
+  height: 70px;
 }
 
 .nav-barr {
@@ -112,14 +112,15 @@ header {
 main {
   background-color: var(--grey-six);
   height: 100%;
+  bottom: 0;
 }
 
 .section-two {
   max-width: 40%;
   background-color: var(--grey-seven);
   border: 1px solid var(--grey-three);
-  margin: 47px auto;
-  height: 800px;
+  margin: auto auto;
+  height: 700px;
   border-radius: 5px;
   padding: 20px;
 }
