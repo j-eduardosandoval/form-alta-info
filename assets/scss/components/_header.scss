@@ -1,22 +1,40 @@
 header {
-  height: 60px;
+  height: 40px;
 }
 .nav-barr {
   padding: 10px;
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   background-color: var(--azul-uno);
   justify-items: center;
   align-items: center;
   position: fixed;
-  margin: 0;
+  
 }
 .header-section-logo {
+  grid-column: 1;
   img {
     width: 40%;
   }
 }
 .tittle-valid {
+  grid-column: 2;
   color: var(--white);
+}
+
+.user-menu {
+  grid-column: 3;
+  color: white;
+  font-size: 10px;
+  .user-header {    
+    list-style: none;
+  }
+  .user-footer {
+    list-style: none;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
 }
