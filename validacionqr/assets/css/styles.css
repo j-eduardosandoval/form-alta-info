@@ -118,10 +118,19 @@ main {
 .container-valid-info table tr td {
   width: 50%;
 }
-.container-valid-info table tr .estatus {
-  width: 20%;
-  border-radius: 5px;
-  background-color: #ee0000;
+.container-valid-info table tr .estatus-vigente {
+  width: 15%;
+  padding: 6px;
+  border-radius: 8px;
+  background-color: #13aa13;
+  color: white;
+  text-align: center;
+}
+.container-valid-info table tr .estatus-vencido {
+  width: 30%;
+  padding: 6px;
+  border-radius: 8px;
+  background-color: #9e0000;
   color: white;
   text-align: center;
 }
@@ -151,9 +160,13 @@ main {
   .container-valid-info table tr td {
     width: 100%;
   }
-  .container-valid-info table tr .estatus {
+  .container-valid-info table tr .estatus-vigente {
     width: 50%;
     background-color: green;
+  }
+  .container-valid-info table tr .estatus-vencido {
+    width: 80%;
+    background-color: maroon;
   }
 }
 /* footer-contact */
