@@ -44,26 +44,26 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
 
   if (mysqli_num_rows($listaa) == 0) {
     $insertSQL = sprintf(
-      "INSERT INTO qrcode (`numinforme`, clave, nombre, marca, modelo, fecha_emision, idnom, iding, idsup) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+      "INSERT INTO qrcode (`numinforme`, clave, iditem, marca, modelo, fecha_emision, idnom, iding, idsup) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
       GetSQLValueString($_POST['numinforme'], "text"),
       GetSQLValueString($_POST['clave'], "text"),
-      GetSQLValueString($_POST['nombre'], "text"),
+      GetSQLValueString($_POST['iditem'], "int"),
       GetSQLValueString($_POST['marca'], "text"),
       GetSQLValueString($_POST['modelo'], "text"),
       GetSQLValueString($_POST['fecha_emision'], "date"),      
-      GetSQLValueString($_POST['idnom'], "text"),
-      GetSQLValueString($_POST['iding'], "text"),
-      GetSQLValueString($_POST['idsup'], "text"));
+      GetSQLValueString($_POST['idnom'], "int"),
+      GetSQLValueString($_POST['iding'], "int"),
+      GetSQLValueString($_POST['idsup'], "int"));
 
     $Result1 = mysqli_query($conexion, $insertSQL) or die(mysqli_error());
     echo '<script language=javascript>
 alert("Se Registro una nueva clave")
-self.location="../validacionqr.php"
+self.location="form-items.php"
 </script>';
   } else {
     echo '<script language=javascript>
 alert("Existe ya un registro con los mismos datos")
-self.location="../validacionqr.php"
+self.location="form-items.php"
 </script>';
   }
 }

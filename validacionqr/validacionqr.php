@@ -12,7 +12,12 @@ if (isset($_GET['accion'])) {
     $accion = $_GET['accion'];
 }
 
-$query_lista = "SELECT * FROM qrcode WHERE clave ='$codunicoinfor'";
+$query_lista = "SELECT qrcode.*, ingeniero.nombre, ingeniero.apellidos, items.nomitem, supervisor.nombre_sup, supervisor.apellidos_sup, norma.nombnom FROM qrcode
+inner join ingeniero on qrcode.iding = ingeniero.iding
+left join items on qrcode.iditem = items.iditem
+left join supervisor on qrcode.idsup = supervisor.idsup
+left join norma on qrcode.idnom = norma.idnom
+ WHERE clave ='$codunicoinfor'";
 $lista = mysqli_query($conexion, $query_lista) or die(mysqli_error());
 $roowfila = mysqli_fetch_array($lista);
 $totalRows_lista = mysqli_num_rows($lista);
@@ -60,7 +65,7 @@ $totalRows_lista = mysqli_num_rows($lista);
                         </tr>
                         <tr>
                             <td>Nombre Item:</td>
-                            <td><?php echo $roowfila['nombre']; ?></td>
+                            <td><?php echo $roowfila['nomitem']; ?></td>
                         </tr>
                         <tr>
                             <td>Marca:</td>
@@ -77,44 +82,61 @@ $totalRows_lista = mysqli_num_rows($lista);
                         <tr>
                             <td>Fecha vigencia:</td>
                             <td><?php 
+                            $fechavacia= "";
                             $fechamasdias = $roowfila['fecha_emision'];
-                            $fechavigencia= date("Y-m-d" ,strtotime($fechamasdias."+ 90 days"));
-                            echo $fechavigencia ?></td>
+                            if ($roowfila['fecha_emision'] == "") {
+                                echo $fechavacia;
+                            } else {
+                                $fechamasdias = $roowfila['fecha_emision'];
+                                $fechavigencia= date("Y-m-d" ,strtotime($fechamasdias."+ 90 days"));
+                                echo $fechavigencia;
+                            }
+                            ?></td>
                         </tr>
                         <tr>
                             <td>Norma:</td>
-                            <td><?php echo $roowfila['idnom']; ?></td>
+                            <td><?php echo $roowfila['nombnom']; ?></td>
                         </tr>
                         <tr>
                             <td>Ing. laboratorista:</td>
-                            <td><?php echo $roowfila['iding']; ?></td>
+                            <td><?php echo $roowfila['nombre']." ".$roowfila['apellidos']; ?></td>
                         </tr>
                         <tr>
                             <td>Supervisor:</td>
-                            <td><?php echo $roowfila['idsup']; ?></td>
+                            <td><?php echo $roowfila['nombre_sup']." ".$roowfila['apellidos_sup']; ?></td>
                         </tr>
                         <tr>
                             <td>Vigencia:</td>
-                            <td>90 Dias</td>
+                            <td>
+                                <?php 
+                                if ($roowfila['fecha_emision'] == "") {
+                                    echo $fechavacia;
+                                } else {
+                                    echo "90 Dias";
+                                }
+                                ?>
+                                </td>
                         </tr>
                         <tr>
                             <td>Estatus:</td>
                             <td>
                                 <?php 
+                                if ($roowfila['fecha_emision'] == "") {
+                                    echo $fechavacia;
+                                } else {
                                     $fechaemision= new DateTime($fechamasdias);                                    
                                     $fechaactual= new DateTime(date("Y-m-d"));
                                     $fechaestatus= $fechaemision->diff($fechaactual);
-                                    echo $fechaestatus->days . ' dias';
+                                    /*echo $fechaestatus->days . ' dias';*/
                                     $fechaa = $fechaestatus->days;
                                     if($fechaa > 90){
                                         echo '<span class="estatus-vencido" style="font-size:14px">VENCIDO</span>';
-                                    } else {
-                                        echo '<span class="estatus-vigente" style="font-size:14px">VIGENTE</span>';
-                                    };
-                           
+                                    } else {                                                                               
+                                        echo '<span class="estatus-vigente" style="font-size:14px">VIGENTE</span>';                                        
+                                    }
+                                }
                                 ?>
-                            </td>
-                            
+                            </td>                            
                         </tr>
                     </table>
                 </form>
