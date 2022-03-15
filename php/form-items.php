@@ -20,6 +20,7 @@ if (!isset($_SESSION['U_spidusu']) and $_SESSION['U_spidusu'] == '') {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ingreso</title>
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="plugin/select2/select2.min.css">
 </head>
 
 <body>
@@ -28,9 +29,7 @@ if (!isset($_SESSION['U_spidusu']) and $_SESSION['U_spidusu'] == '') {
       <section class="header-section-logo">
         <img src="../assets/images/logo-navbar.png" alt="" />
       </section>
-      <section class="tittle-valid">
-        <h1>Ingreso Items</h1>
-      </section>
+
       <section class="user-menu">
         <div class="navbar-custom-menu">
               <ul class="dropdown-menu">                
@@ -64,42 +63,99 @@ if (!isset($_SESSION['U_spidusu']) and $_SESSION['U_spidusu'] == '') {
         <div class="formulario-ingreso">
           <form action="registro-qr-items.php" method="post" id="form1" name="form1">
             <div class="form-group">
-              <input type="text" name="numinforme" value="" placeholder="No. Informe" />
+              <input type="text" name="numinforme" value="" required pattern="[A-Z]{4}[0-9]{7}" placeholder="No. Informe" />
             </div>
 
             <div class="form-group">
-              <input type="text" name="clave" value="" placeholder="Clave" />
+              <input type="text" name="clave" value="" required  placeholder="Clave" />
             </div>
 
             <div class="form-group">
-              <input type="text" name="nombre" value="" placeholder="Nombre Item" />
+            <label for="id" class="col-sm-3 control-label">Item:</label>              
+              <div>
+              <select class="form-control select2" required name="iditem" id="iditem">
+                        <option value="">-- Seleccione una Item-- </option>
+                          <?php 
+                          $rs=mysqli_query($conexion, "SELECT * FROM items");
+                           while($off=mysqli_fetch_array($rs))
+                           {                        
+                          ?>
+                           <OPTION VALUE=<?php echo $off['iditem'];?>><?php echo $off['nomitem'];?></OPTION>
+                            <?php 
+                              }
+                              ?>
+                      </select>
+              </div>
+            </div>
+
+
+
+            <div class="form-group">
+              <input type="text" name="marca" value="" required  placeholder="Marca" />
             </div>
 
             <div class="form-group">
-              <input type="text" name="marca" value="" placeholder="Marca" />
-            </div>
-
-            <div class="form-group">
-              <input type="text" name="modelo" value="" placeholder="Modelo" />
+              <input type="text" name="modelo" value="" required  placeholder="Modelo" />
             </div>
 
             <div class="form-group">
               <label for="">Fecha de emisión</label>
-              <input type="date" name="fecha_emision" placeholder="Fecha de emision" />
+              <input type="date" name="fecha_emision" required  placeholder="Fecha de emision" />
             </div>
 
             <div class="form-group">
-              <input type="text" name="idnom" value="" placeholder="Norma" />
+            <label for="id" class="col-sm-3 control-label">Norma:</label>              
+              <div>
+              <select class="form-control select2" required name="idnom" id="idnom">
+                        <option value="">-- Seleccione una Item-- </option>
+                          <?php 
+                          $rs=mysqli_query($conexion, "SELECT * FROM norma");
+                           while($off=mysqli_fetch_array($rs))
+                           {                        
+                          ?>
+                           <OPTION VALUE=<?php echo $off['idnom'];?>><?php echo $off['nombnom'];?></OPTION>
+                            <?php 
+                              }
+                              ?>
+                      </select>
+              </div>
             </div>
 
             <div class="form-group">
-              <input type="text" name="iding" value="" placeholder="Ing. Laboratorista" />
+            <label for="id" class="col-sm-3 control-label">Ingeniero:</label>              
+              <div>
+              <select class="form-control select2" required name="iding" id="iding">
+                        <option value="">-- Seleccione una Item-- </option>
+                          <?php 
+                          $rs=mysqli_query($conexion, "SELECT * FROM ingeniero");
+                           while($off=mysqli_fetch_array($rs))
+                           {                        
+                          ?>
+                           <OPTION VALUE=<?php echo $off['iding'];?>><?php echo $off['nombre'];?></OPTION>
+                            <?php 
+                              }
+                              ?>
+                      </select>
+              </div>
             </div>
 
             <div class="form-group">
-              <input type="text" name="idsup" value="" placeholder="Supervisor" />
+            <label for="id" class="col-sm-3 control-label">Supervisor:</label>              
+              <div>
+              <select class="form-control select2" required name="idsup" id="idsup">
+                        <option value="">-- Seleccione una Item-- </option>
+                          <?php 
+                          $rs=mysqli_query($conexion, "SELECT * FROM supervisor");
+                           while($off=mysqli_fetch_array($rs))
+                           {                        
+                          ?>
+                           <OPTION VALUE=<?php echo $off['idsup'];?>><?php echo $off['nombre_sup'];?></OPTION>
+                            <?php 
+                              }
+                              ?>
+                      </select>
+              </div>
             </div>
-
 
             <div class="box-footer">
               <button type="submit" class="" title="Gruardar registro">
@@ -142,6 +198,13 @@ if (!isset($_SESSION['U_spidusu']) and $_SESSION['U_spidusu'] == '') {
       Todos los derechos reservados.
     </div>
   </footer>
+
+  <script src="plugin/select2/select2.full.min.js"></script>
+  <script>
+  $(function() {
+    $(".select2").select2();
+  });
+  </script>
 </body>
 
 </html>
