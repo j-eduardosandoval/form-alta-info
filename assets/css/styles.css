@@ -111,8 +111,7 @@ header {
 
 main {
   background-color: var(--grey-six);
-  height: 100%;
-  bottom: 0;
+  height: 85%;
 }
 
 .section-two {
@@ -120,7 +119,6 @@ main {
   background-color: var(--grey-seven);
   border: 1px solid var(--grey-three);
   margin: auto auto;
-  height: 700px;
   border-radius: 5px;
   padding: 20px;
 }
@@ -175,7 +173,6 @@ main {
     border: none;
   }
   .section-two .formulario-container {
-    width: 90%;
     margin: 0 auto;
   }
   .section-two .formulario-container .formulario-ingreso {
@@ -269,6 +266,21 @@ main {
   background-color: #1a73e8;
 }
 
+@media only screen and (max-width: 1200px) {
+  .login-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    font-size: 18px;
+  }
+  .login-main .login_content {
+    align-items: center;
+    justify-content: center;
+    border: none;
+    height: auto;
+  }
+}
 .footer {
   bottom: 0;
   width: 100%;
